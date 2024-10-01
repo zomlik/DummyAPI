@@ -20,5 +20,5 @@ jobs:
 
       - name: Run tests
         env:
-          TOKEN: ${{secrets.TOKEN}}
+          TOKEN: ${{vars.TOKEN}}
         run: pytest
