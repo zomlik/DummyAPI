@@ -1,11 +1,13 @@
+import os
 import requests
 import allure
 from utils.logger import log
 
 
 class ApiClient:
-    _TOKEN = ""
+    _TOKEN = os.environ.get("TOKEN")
     _HEADERS = {"Authorization": f"Bearer {_TOKEN}"}
+
     def __init__(self):
         self.response = None
 
