@@ -20,7 +20,7 @@ class TestCreateUser:
         assert r.check_error_message_is("Invalid name: it must be a string with at least 3 characters")
 
     @allure.title("Создание пользователя с именем из 3 символов")
-    def test_create_user_name_3s(self, name: str = "aa"):
+    def test_create_user_name_3s(self, name: str = "aaa"):
         r = Users()
         r.create_user(create_user_json(name=name))
         assert r.status_code_is(200)

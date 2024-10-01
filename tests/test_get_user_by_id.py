@@ -8,10 +8,8 @@ class TestGetUserById:
         r = Users()
         r.get_user_by_id(id)
         assert r.status_code_is(200)
-        with allure.step(f"Пользователь с id:{id} найден"):
-            assert r.check_id_is(id)
-        with allure.step("Схема валидна"):
-            assert r.json_schema_get_user_by_id()
+        assert r.check_id_is(id)
+        assert r.json_schema_get_user_by_id()
 
     @allure.title("Получить пользователя по не валидному id")
     def test_get_user_by_invalid_id(self):
