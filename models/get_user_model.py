@@ -6,6 +6,7 @@ class DecodeToken(BaseModel):
     iat: int
     exp: int
 
+
 class GetUserByIdModel(BaseModel):
     id: str
     name: str

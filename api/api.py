@@ -1,6 +1,8 @@
 import os
-import requests
+
 import allure
+import requests
+
 from utils.logger import log
 
 
@@ -9,6 +11,7 @@ class ApiClient:
     _HEADERS = {"Authorization": f"Bearer {_TOKEN}"}
 
     def __init__(self):
+
         self.response = None
 
     def get(self, url: str, query: dict = None):

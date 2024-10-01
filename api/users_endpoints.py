@@ -1,10 +1,10 @@
 import allure
+from pydantic import ValidationError
+
 from api.api import ApiClient
 from api.routes import Routes
+from models.create_user_model import CreateUserModel, ResponseCreateUserModel
 from models.get_user_model import GetUserByIdModel
-from models.create_user_model import CreateUserModel
-from models.create_user_model import ResponseCreateUserModel
-from pydantic import ValidationError
 
 
 class Users(ApiClient):

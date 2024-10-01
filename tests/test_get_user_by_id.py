@@ -1,5 +1,7 @@
 import allure
+
 from api.users_endpoints import Users
+
 
 @allure.suite("Получение пользователя по ID")
 class TestGetUserById:
@@ -16,4 +18,3 @@ class TestGetUserById:
         r = Users()
         r.get_user_by_id("123abs")
         assert r.status_code_is(400)
-

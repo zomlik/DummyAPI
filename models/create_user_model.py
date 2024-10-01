@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-from typing import Optional
 
 
 class CreateUserModel(BaseModel):
@@ -10,6 +9,7 @@ class CreateUserModel(BaseModel):
     address: str
     role: str
     referralCode: str = None
+
 
 class ResponseCreateUserModel(BaseModel):
     name: str

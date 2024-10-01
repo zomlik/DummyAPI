@@ -1,8 +1,11 @@
-from mimesis import Generic, Locale
 from random import randint
+
+from mimesis import Generic, Locale
+
 
 class DataGenerator:
     generate = Generic(Locale.EN)
+
     @classmethod
     def name(cls):
         return cls.generate.person.name()
@@ -21,7 +24,7 @@ class DataGenerator:
 
     @staticmethod
     def phone_number():
-        return f"+12345678901"
+        return "+12345678901"
 
     @staticmethod
     def role(role: str = "user"):
@@ -30,4 +33,3 @@ class DataGenerator:
     @staticmethod
     def referral_code():
         return "ABCDEFGH"
-
