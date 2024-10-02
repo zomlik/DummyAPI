@@ -7,11 +7,10 @@ from utils.logger import log
 
 
 class ApiClient:
-    _TOKEN = os.environ.get("TOKEN")
+    _TOKEN = os.environ["TEST"]
     _HEADERS = {"Authorization": f"Bearer {_TOKEN}"}
 
     def __init__(self):
-
         self.response = None
 
     def get(self, url: str, query: dict = None):
@@ -28,6 +27,7 @@ class ApiClient:
 
     def delete(self, url: str):
         self.response = requests.delete(url=url, headers=self._HEADERS)
+        log(response=self.response)
 
     @allure.step("Статус код {code}")
     def status_code_is(self, code: int):
@@ -42,13 +42,9 @@ class ApiClient:
     def check_id_is(self, id: str):
         return self.get_json()["id"] == id
 
-    @allure.step("Name присутствует в ответе")
+    @allure.step("Имя {mane}")
     def check_name_is(self, name: str):
         return self.get_json()["name"] == name
-
-    @allure.step("Поле status created")
-    def check_status_is_created(self, status: str = "created"):
-        return self.get_json()["status"] == status
 
     @allure.step("Ошибка {msg}")
     def check_error_message_is(self, msg: str):

@@ -7,7 +7,7 @@ class DecodeToken(BaseModel):
     exp: int
 
 
-class GetUserByIdModel(BaseModel):
+class GetUserModel(BaseModel):
     id: str
     name: str
     email: str
